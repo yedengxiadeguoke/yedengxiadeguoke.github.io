@@ -494,11 +494,11 @@ footer.is-mobile {
 }
 #footer {
   padding: 2rem 1rem;
-  color: #000;
+  color: #fff;
   text-align: center;
 }
 #footer a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
 }
@@ -562,7 +562,7 @@ footer.is-mobile {
 }
 #site-title,
 #site-sub-title {
-  color: #000;
+  color: #fff;
   text-align: center;
   text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.15);
   line-height: 1.5;
@@ -581,7 +581,7 @@ footer.is-mobile {
 }
 #site-social-icons .social-icon {
   margin: 0 0.5rem;
-  color: #000;
+  color: #fff;
   text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.15);
   font-size: 1.4rem;
   cursor: pointer;
@@ -606,7 +606,7 @@ footer.is-mobile {
 #page-header .toggle-menu {
   display: none;
   padding-top: 0.5rem;
-  color: #000;
+  color: #fff;
   cursor: pointer;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -618,7 +618,7 @@ footer.is-mobile {
   color: #fff;
 }
 #page-header a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 #page-header a:hover {
@@ -1138,7 +1138,7 @@ footer.is-mobile {
   height: 56px;
 }
 #top-container a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -1185,7 +1185,7 @@ footer.is-mobile {
   padding: 0 1rem;
   width: 100%;
   height: 60vh;
-  color: #000;
+  color: #fff;
   text-align: center;
 }
 #top-container #post-title {
@@ -1445,7 +1445,7 @@ a:hover {
   text-decoration: none;
 }
 a#site-name {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 a.fancybox {
@@ -1593,11 +1593,11 @@ a.fancybox:focus {
     background-attachment: local;
   }
   #top-container #post-title {
-    color: #000;
+    color: #fff;
     font-size: 1.1rem;
   }
   #post-title {
-    color: #000;
+    color: #fff;
     font-size: 1.1rem;
   }
 }
