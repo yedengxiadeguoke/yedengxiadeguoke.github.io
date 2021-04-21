@@ -8,7 +8,7 @@
     noSupport: '浏览器不支持'
   },
   hexoVersion: '5.2.0'
-} </script><meta name="generator" content="Hexo 5.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL"><span class="toc-number">1.</span> <span class="toc-text">MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-mysql%E4%B8%AD%E7%9A%84-%E5%8F%B7%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">1.mysql中的+号：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-mysql%E5%81%9A%E6%8B%BC%E6%8E%A5"><span class="toc-number">1.2.</span> <span class="toc-text">2.mysql做拼接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%8E%BB%E9%87%8D"><span class="toc-number">1.3.</span> <span class="toc-text">3.去重</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%98%BE%E7%A4%BA%E8%A1%A8departments%E7%9A%84%E7%BB%93%E6%9E%84%EF%BC%8C%E5%B9%B6%E6%9F%A5%E8%AF%A2%E5%85%B6%E4%B8%AD%E5%85%A8%E9%83%A8%E6%95%B0%E6%8D%AE"><span class="toc-number">1.4.</span> <span class="toc-text">4.显示表departments的结构，并查询其中全部数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%98%BE%E7%A4%BA%E8%A1%A8departments%E7%9A%84%E5%85%A8%E9%83%A8%E5%88%97%EF%BC%8C%E5%90%84%E4%B8%AA%E5%88%97%E4%B9%8B%E9%97%B4%E7%94%A8%E9%80%97%E5%8F%B7%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%88%97%E5%A4%B4%E6%98%BE%E7%A4%BA%E6%88%90OUT-PUT"><span class="toc-number">1.5.</span> <span class="toc-text">5.显示表departments的全部列，各个列之间用逗号连接，列头显示成OUT_PUT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F"><span class="toc-number">1.6.</span> <span class="toc-text">排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E6%AE%B5%E7%9A%84%E5%AD%97%E8%8A%82%E6%95%B0"><span class="toc-number">1.7.</span> <span class="toc-text">字段的字节数</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://yd-test1.oss-cn-qingdao.aliyuncs.com/blog_cj/avatar/avatar1.jpg"></div><div class="author-info__name text-center">Chen</div><div class="author-info__description text-center">普普通通收集普普通通</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/yedengxiadeguoke">Follow Me</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">4</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">4</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">3</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://yd-test1.oss-cn-qingdao.aliyuncs.com/blog_cj/topImage/topImage4.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Chen搬砖日常</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">个人主页</a><a class="site-page" href="/archives">文章总览</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a><a class="site-page" href="/gallery">相册</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">mysql最基础</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-08</time></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><h4 id="1-mysql中的-号："><a href="#1-mysql中的-号：" class="headerlink" title="1.mysql中的+号："></a>1.mysql中的+号：</h4><p>  只有一个功能：运算符<br> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select 100+90; #两个操作数都为数值型，则做加法运算</span><br><span class="line"></span><br><span class="line">select &#39;123&#39;+90; #其中一方为字符型，试图将字符型转换成数值型</span><br><span class="line">select &#39;abc&#39;+90;                  #如果转换失败，则将字符型数组转换成0</span><br><span class="line">                                  #如果转换成功，将继续做加法运算</span><br><span class="line"></span><br><span class="line">select null+90; #只要一方为空，结果为空</span><br></pre></td></tr></table></figure></p>
+} </script><meta name="generator" content="Hexo 5.2.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL"><span class="toc-number">1.</span> <span class="toc-text">MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-mysql%E4%B8%AD%E7%9A%84-%E5%8F%B7%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">1.mysql中的+号：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-mysql%E5%81%9A%E6%8B%BC%E6%8E%A5"><span class="toc-number">1.2.</span> <span class="toc-text">2.mysql做拼接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%8E%BB%E9%87%8D"><span class="toc-number">1.3.</span> <span class="toc-text">3.去重</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%98%BE%E7%A4%BA%E8%A1%A8departments%E7%9A%84%E7%BB%93%E6%9E%84%EF%BC%8C%E5%B9%B6%E6%9F%A5%E8%AF%A2%E5%85%B6%E4%B8%AD%E5%85%A8%E9%83%A8%E6%95%B0%E6%8D%AE"><span class="toc-number">1.4.</span> <span class="toc-text">4.显示表departments的结构，并查询其中全部数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%98%BE%E7%A4%BA%E8%A1%A8departments%E7%9A%84%E5%85%A8%E9%83%A8%E5%88%97%EF%BC%8C%E5%90%84%E4%B8%AA%E5%88%97%E4%B9%8B%E9%97%B4%E7%94%A8%E9%80%97%E5%8F%B7%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%88%97%E5%A4%B4%E6%98%BE%E7%A4%BA%E6%88%90OUT-PUT"><span class="toc-number">1.5.</span> <span class="toc-text">5.显示表departments的全部列，各个列之间用逗号连接，列头显示成OUT_PUT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E6%8E%92%E5%BA%8F"><span class="toc-number">1.6.</span> <span class="toc-text">6.排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E5%AD%97%E6%AE%B5%E7%9A%84%E5%AD%97%E8%8A%82%E6%95%B0"><span class="toc-number">1.7.</span> <span class="toc-text">7.字段的字节数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E5%B8%B8%E8%A7%81%E5%87%BD%E6%95%B0"><span class="toc-number">1.8.</span> <span class="toc-text">8.常见函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%95%E8%A1%8C%E5%87%BD%E6%95%B0"><span class="toc-number">1.8.1.</span> <span class="toc-text">单行函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E5%87%BD%E6%95%B0"><span class="toc-number">1.8.2.</span> <span class="toc-text">分组函数</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://yd-test1.oss-cn-qingdao.aliyuncs.com/blog_cj/avatar/avatar1.jpg"></div><div class="author-info__name text-center">Chen</div><div class="author-info__description text-center">普普通通收集普普通通</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/yedengxiadeguoke">Follow Me</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">5</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">4</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">3</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://yd-test1.oss-cn-qingdao.aliyuncs.com/blog_cj/topImage/topImage4.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Chen搬砖日常</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">个人主页</a><a class="site-page" href="/archives">文章总览</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a><a class="site-page" href="/gallery">相册</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">mysql最基础</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-08</time></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><h4 id="1-mysql中的-号："><a href="#1-mysql中的-号：" class="headerlink" title="1.mysql中的+号："></a>1.mysql中的+号：</h4><p>  只有一个功能：运算符<br> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select 100+90; #两个操作数都为数值型，则做加法运算</span><br><span class="line"></span><br><span class="line">select &#39;123&#39;+90; #其中一方为字符型，试图将字符型转换成数值型</span><br><span class="line">select &#39;abc&#39;+90;                  #如果转换失败，则将字符型数组转换成0</span><br><span class="line">                                  #如果转换成功，将继续做加法运算</span><br><span class="line"></span><br><span class="line">select null+90; #只要一方为空，结果为空</span><br></pre></td></tr></table></figure></p>
 <hr>
 <h4 id="2-mysql做拼接"><a href="#2-mysql做拼接" class="headerlink" title="2.mysql做拼接"></a>2.mysql做拼接</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select CONCAT(&#39;a&#39;,&#39;b&#39;,&#39;c&#39;) AS 结果;</span><br></pre></td></tr></table></figure>
 <hr>
@@ -19,14 +19,167 @@
 <h4 id="5-显示表departments的全部列，各个列之间用逗号连接，列头显示成OUT-PUT"><a href="#5-显示表departments的全部列，各个列之间用逗号连接，列头显示成OUT-PUT" class="headerlink" title="5.显示表departments的全部列，各个列之间用逗号连接，列头显示成OUT_PUT"></a>5.显示表departments的全部列，各个列之间用逗号连接，列头显示成OUT_PUT</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT</span><br><span class="line">	concat( department_id, &#39;,&#39;,department_name,&#39;,&#39;, manager_id,&#39;,&#39;, ifnull( location_id, 0 ) ) AS OUT_PUT </span><br><span class="line">FROM</span><br><span class="line">	departments;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><ul>
+<h4 id="6-排序"><a href="#6-排序" class="headerlink" title="6.排序"></a>6.排序</h4><ul>
 <li><strong><em>order by desc;</em></strong> #降序</li>
 <li><strong><em>order by asc;</em></strong> #升序</li>
 </ul>
 <hr>
-<h4 id="字段的字节数"><a href="#字段的字节数" class="headerlink" title="字段的字节数"></a>字段的字节数</h4><ul>
+<h4 id="7-字段的字节数"><a href="#7-字段的字节数" class="headerlink" title="7.字段的字节数"></a>7.字段的字节数</h4><ul>
 <li>length(字段名)</li>
 </ul>
+<h4 id="8-常见函数"><a href="#8-常见函数" class="headerlink" title="8.常见函数"></a>8.常见函数</h4><p>概念：类似于java的方法，将一组逻辑语句封装在方法体中，对外暴露方法名   </p>
+<p>好处：</p>
+<ul>
+<li>隐藏了实现细节</li>
+<li>提高了代码的重用性    </li>
+</ul>
+<p>调用：select函数名（实参列表）【from列表】;    </p>
+<p>特点：</p>
+<blockquote>
+<p>1.叫什么（函数名）</p>
+<p>2.干什么人（函数功能）     </p>
+</blockquote>
+<p>分类：</p>
+<ul>
+<li>单行函数 concat、length、ifnull等</li>
+<li>分组函数 做统计使用</li>
+</ul>
+<h5 id="单行函数"><a href="#单行函数" class="headerlink" title="单行函数"></a>单行函数</h5><p>一.字符函数</p>
+<ul>
+<li><p>length 获取参数值的字节个数</p>
+<blockquote>
+<p>select length(‘john’);</p>
+</blockquote>
+</li>
+<li><p>concat 拼接字符串</p>
+<blockquote>
+<p>select concat(last_name,”_”,first_name) 姓名 from employees;</p>
+</blockquote>
+</li>
+<li><p>upper 变大写,lower 变小写 </p>
+<blockquote>
+<p>select upper(“john”);</p>
+<p>select lower(“joHn”);</p>
+<p>select concat(Upper(last_name),lower(first_name)) 姓名 from employees;</p>
+</blockquote>
+</li>
+<li><p>substr、substring 索引从1开始 截取指定索引处后的字符</p>
+<blockquote>
+<p>select substr(“1234556”,5) out_put; </p>
+</blockquote>
+</li>
+<li><p>inster 返回子串第一次出现的索引，如果找不到返回0</p>
+<blockquote>
+<p>select inster(‘1234567’,’123’) as out_put;</p>
+</blockquote>
+</li>
+<li><p>trim 去前后掉空格</p>
+<blockquote>
+<p>select trim(‘    1234    ‘) as out_put;</p>
+<p>select TRIM(‘aa’ FROM ‘aaaaaa1234aaaaaa1234aa’) as out_put;</p>
+</blockquote>
+</li>
+<li><p>lpad 用指定的字符实现左填充指定长度</p>
+<blockquote>
+<p>select lpad(“123”,8,”*”) as out_put;</p>
+</blockquote>
+</li>
+<li><p>rpad </p>
+<blockquote>
+<p>select rpad(“123”,8,”*”) as out_put;</p>
+</blockquote>
+</li>
+<li><p>replace 替换</p>
+</li>
+</ul>
+<p>二.数学函数</p>
+<ul>
+<li><p>round 四舍五入</p>
+<blockquote>
+<p>select round(-1.55,1);</p>
+</blockquote>
+</li>
+<li><p>ceil 向上取整，返回&gt;=该参数的最小整数</p>
+<blockquote>
+<p>select ceil(1.02);</p>
+</blockquote>
+</li>
+<li><p>floor 向小取整，返回&lt;=该参数的最大整数</p>
+<blockquote>
+<p>select floor(1.02);  </p>
+</blockquote>
+</li>
+<li><p>truncate 截断</p>
+<blockquote>
+<p>select truncate(1.02,1);  </p>
+</blockquote>
+</li>
+<li><p>mod 取余</p>
+<blockquote>
+<p>select mod(10,3);  </p>
+</blockquote>
+</li>
+</ul>
+<p>三.日期函数</p>
+<ul>
+<li><p>now 返回当前系统日期+时间</p>
+<blockquote>
+<p>select now();</p>
+</blockquote>
+</li>
+<li><p>curdate 返回当前系统日期，不包含时间</p>
+<blockquote>
+<p>select curdate();</p>
+</blockquote>
+</li>
+<li><p>curtime 返回当前系统时间，不包含日期</p>
+<blockquote>
+<p>select curtime(); </p>
+</blockquote>
+</li>
+<li><p>year 可以获取指定的部分，年月日，时分秒</p>
+<blockquote>
+<p>select year(now());</p>
+</blockquote>
+</li>
+<li><p>str_to_date 将字符通过指定格式转换成日期</p>
+<blockquote>
+<p>select str_to_date(‘1998-3-2’,’%Y-%c-%d’) as out_put;</p>
+</blockquote>
+</li>
+<li><p>date_format 将日期转换成字符</p>
+<blockquote>
+<p>select date_format(NOW(),’%Y-%c-%d’) as out_put;</p>
+</blockquote>
+</li>
+</ul>
+<p>四.其他函数</p>
+<ul>
+<li>select version(); </li>
+<li>select database(); </li>
+<li>select user(); </li>
+</ul>
+<p>五.流程控制函数</p>
+<ul>
+<li><p>if函数：if else 的效果</p>
+<blockquote>
+<p>select IF(10&lt;55,’大’，’小’);</p>
+</blockquote>
+</li>
+<li><p>case函数 的使用一：switch case 的效果</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> salary 原始工资, department_id,</span><br><span class="line"><span class="keyword">case</span> department_id</span><br><span class="line"><span class="keyword">when</span> <span class="number">30</span> <span class="keyword">then</span> salary*<span class="number">1.1</span></span><br><span class="line"><span class="keyword">when</span> <span class="number">40</span> <span class="keyword">then</span> salary*<span class="number">1.2</span></span><br><span class="line"><span class="keyword">when</span> <span class="number">50</span> <span class="keyword">then</span> salary*<span class="number">1.3</span></span><br><span class="line"><span class="keyword">else</span>  salary</span><br><span class="line"><span class="keyword">end</span> <span class="keyword">as</span> 新工资</span><br><span class="line"><span class="keyword">from</span> employees;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>case函数的使二：类似于 多重if</p>
+</li>
+</ul>
+<h5 id="分组函数"><a href="#分组函数" class="headerlink" title="分组函数"></a>分组函数</h5><p>分类：</p>
+<blockquote>
+<p>sum 求和</p>
+<p>avg 平均值</p>
+<p>max 最大值</p>
+<p>min 最小值</p>
+<p>count 技术按个数</p>
+</blockquote>
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Chen</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yedengxiadeguoke.github.io/2021/04/08/mysql最基础/">https://yedengxiadeguoke.github.io/2021/04/08/mysql最基础/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yedengxiadeguoke.github.io">Chen搬砖日常</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="https://yd-test1.oss-cn-qingdao.aliyuncs.com/blog_cj/qrCode/WxQrCode.jpg"><div class="post-qr-code__desc">微信打赏</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="https://yd-test1.oss-cn-qingdao.aliyuncs.com/blog_cj/qrCode/zfbQrCode.jpg"><div class="post-qr-code__desc">支付宝打赏</div></div></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2021/04/12/%E7%AC%AC959%E5%B0%81%E4%BF%A1/"><i class="fa fa-chevron-left">  </i><span>第959封信</span></a></div><div class="next-post pull-right"><a href="/2020/10/23/%E4%B8%80%E7%AF%87%E5%88%86%E6%9E%90%E5%BD%A2%E5%8A%BF%E7%9A%84%E5%A5%87%E6%96%87-%E6%8B%BF%E7%A8%B3%E4%BD%A0%E7%9A%84%E9%92%B1-%E4%B8%8D%E8%A6%81%E5%81%9A%E4%BB%BB%E4%BD%95%E5%86%B2%E5%8A%A8%E6%8A%95%E8%B5%84/"><span>一篇分析形势的奇文：拿稳你的钱，不要做任何冲动投资</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
   clientID: '3680a32d5e9ab989441e',
   clientSecret: '70b93ba7916f0eb1a658d7da466b4ce78d7c568f',
