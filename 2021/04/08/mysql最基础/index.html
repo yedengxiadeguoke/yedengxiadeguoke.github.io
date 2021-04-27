@@ -18,7 +18,7 @@
 <meta property="og:description" content="MySQL1.mysql中的+号：  只有一个功能：运算符 1234567select 100+90; #两个操作数都为数值型，则做加法运算select &#39;123&#39;+90; #其中一方为字符型，试图将字符型转换成数值型select &#39;abc&#39;+90;                  #如果转换失败，则将字符型数组转换成0">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-04-08T02:25:29.000Z">
-<meta property="article:modified_time" content="2021-04-26T07:48:31.770Z">
+<meta property="article:modified_time" content="2021-04-27T08:18:42.367Z">
 <meta property="article:author" content="Chen">
 <meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
@@ -227,6 +227,7 @@
     
     <h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><h4 id="1-mysql中的-号："><a href="#1-mysql中的-号：" class="headerlink" title="1.mysql中的+号："></a>1.mysql中的+号：</h4><p>  只有一个功能：运算符<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select 100+90; #两个操作数都为数值型，则做加法运算</span><br><span class="line"></span><br><span class="line">select &#39;123&#39;+90; #其中一方为字符型，试图将字符型转换成数值型</span><br><span class="line">select &#39;abc&#39;+90;                  #如果转换失败，则将字符型数组转换成0</span><br><span class="line">                                  #如果转换成功，将继续做加法运算</span><br><span class="line"></span><br><span class="line">select null+90; #只要一方为空，结果为空</span><br></pre></td></tr></table></figure></p>
 <hr>
+<span id="more"></span>
 <h4 id="2-mysql做拼接"><a href="#2-mysql做拼接" class="headerlink" title="2.mysql做拼接"></a>2.mysql做拼接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select CONCAT(&#39;a&#39;,&#39;b&#39;,&#39;c&#39;) AS 结果;</span><br></pre></td></tr></table></figure>
 <hr>
 <h4 id="3-去重"><a href="#3-去重" class="headerlink" title="3.去重"></a>3.去重</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT department_id FROM employees;</span><br></pre></td></tr></table></figure>
@@ -562,7 +563,7 @@
 
 <nav id="article-nav">
   
-    <a href="/2021/04/12/2021-04-12-%E7%AC%AC959%E5%B0%81%E4%BF%A1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/04/12/%E7%AC%AC959%E5%B0%81%E4%BF%A1/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
