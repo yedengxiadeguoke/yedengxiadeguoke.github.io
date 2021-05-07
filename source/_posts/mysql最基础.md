@@ -17,6 +17,7 @@ select 'abc'+90;                  #如果转换失败，则将字符型数组转
 select null+90; #只要一方为空，结果为空
 ````
 ---  
+<!--more-->
 #### 2.mysql做拼接
 ````mysql
 select CONCAT('a','b','c') AS 结果;
